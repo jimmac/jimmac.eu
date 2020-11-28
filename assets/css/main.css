@@ -119,14 +119,21 @@ body {
     width: 256px;
     height: 256px;
     border-radius: 50%;
-    border: 6px solid var(--light3);
-    transition: transform 300ms ease-out;
+    border-style:solid;
+    border-color: var(--light3);
+    border-width: 16px;
+    transition: transform 300ms ease-out,
+                border-width 300ms ease-out;
   }
     .splash img:hover {
+      border-width: 2px;
       transform: scale(1.1);
     }
   .splash h1 {
     text-transform: uppercase;
+  }
+  .splash .title {
+    font-weight: 600;
   }
 
 .footer .socials {
