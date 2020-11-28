@@ -1,2 +1,3 @@
 # jimmac.eu
-portfolio website
+
+Portfolio website of Jakub Steiner.
