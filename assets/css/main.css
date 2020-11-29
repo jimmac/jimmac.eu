@@ -92,11 +92,6 @@ html, body {
   }
 }
 
-body {
-	color: var(--text);
-  background: #222;
-
-}
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 3rem;
   font-weight: 800;
@@ -106,13 +101,22 @@ a {
   color: var(--green1);
 }
 
+  a.splash {
+    text-decoration: none;
+    color: inherit;
+  }
+
 body {
   /*temporary centering before I get the grid */
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: var(--text);
+  background: #222;
 }
 
 .splash, .footer {
@@ -144,23 +148,75 @@ body {
     font-weight: 600;
   }
 
-.icons .socials {
-  display: inline-block;
-  width: 32px; height: 32px;
-  transition: transform 300ms ease-out;
-  margin: 1rem;
-}
-  .socials path {
-    fill: var(--dark3);
+.icons {
+  margin: 5rem auto 10rem;
   }
-  .socials:hover {
-      cursor: pointer;
-      transform: scale(2);
+
+  .icons .socials {
+    display: inline-block;
+    width: 32px; height: 32px;
+    transition: transform 300ms ease-out;
+    margin: 1rem;
+  }
+    .socials path {
+      fill: var(--dark3);
     }
-    .socials:hover path {
-      fill: var(--light3);
+    .socials:hover {
+        cursor: pointer;
+        transform: scale(2);
+      }
+      .socials:hover path {
+        fill: var(--light3);
+      }
+      .socials:active path {
+        fill: var(--dark1);
+      }
+
+.thegrid {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0;
+  justify-content: stretch;
+  align-items: center;
+  /* grid-column-end: span 2;
+  grid-row-end: span 2; */
+}
+
+  @media (min-width: 800px) { /* desktop */
+    .thegrid {
+      grid-template-columns: repeat(4, 1fr);
     }
-    .socials:active path {
-      fill: var(--dark1);
+  }
+
+  .thegrid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #282828;
+  }
+  .thegrid img::before {
+    content: '';
+    background-color: red;
+  }
+  .thegrid img:nth-child(odd) {
+    background-color: #1e1e1e;
+  }
+
+  .thegrid img.grey {
+    /* background-color: var(--dark4); */
+  }
+  .thegrid img.big {
+    background-color: transparent;
+  }
+    @media (min-width: 800px) { /* desktop */
+      .thegrid img.four  {
+        grid-column: span 4;
+        background-color: transparent;
+      }
+      .thegrid img.two  {
+        grid-column: span 2;
+        background-color: transparent;
+      }
     }
-  
