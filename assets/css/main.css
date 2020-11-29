@@ -176,7 +176,7 @@ body {
   width: 100%;
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 0;
   justify-content: stretch;
   align-items: center;
@@ -218,5 +218,8 @@ body {
       .thegrid img.two  {
         grid-column: span 2;
         background-color: transparent;
+      }
+      .thegrid img.whitespaced  {
+        padding: 20%;
       }
     }
