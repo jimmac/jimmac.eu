@@ -211,6 +211,10 @@ body {
   .thegrid .big {
     background-color: transparent;
   }
+
+  .thegrid .whitespaced  {
+    padding: 20%;
+  }
     @media (min-width: 800px) { /* desktop */
       .thegrid .four  {
         grid-column: span 4;
@@ -220,7 +224,5 @@ body {
         grid-column: span 2;
         background-color: transparent;
       }
-      .thegrid .whitespaced  {
-        padding: 20%;
-      }
+
     }
