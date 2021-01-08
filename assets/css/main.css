@@ -190,7 +190,8 @@ body {
     }
   }
 
-  .thegrid img {
+  .thegrid img,
+  .thegrid video {
     display: block;
     width: 100%;
     height: auto;
@@ -204,22 +205,22 @@ body {
     background-color: #1e1e1e;
   }
 
-  .thegrid img.grey {
+  .thegrid .grey {
     /* background-color: var(--dark4); */
   }
-  .thegrid img.big {
+  .thegrid .big {
     background-color: transparent;
   }
     @media (min-width: 800px) { /* desktop */
-      .thegrid img.four  {
+      .thegrid .four  {
         grid-column: span 4;
         background-color: transparent;
       }
-      .thegrid img.two  {
+      .thegrid .two  {
         grid-column: span 2;
         background-color: transparent;
       }
-      .thegrid img.whitespaced  {
+      .thegrid .whitespaced  {
         padding: 20%;
       }
     }
