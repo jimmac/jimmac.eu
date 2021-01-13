@@ -179,6 +179,9 @@ section.bio {
   margin: 2rem auto 10rem;
   padding: 0 2rem;
 }
+  section.bio h2 {
+    display: none;
+  }
 
   @media (min-width: 800px) { /* desktop */
     section.bio {
