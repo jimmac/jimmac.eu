@@ -76,6 +76,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -86,6 +87,7 @@ html, body {
   letter-spacing: -0.01em;
   word-spacing: -0.01em;
 }
+
 @media (min-width: 700px) {
   html, body {
     font-size: 18px;
