@@ -175,6 +175,19 @@ body {
         fill: var(--dark1);
       }
 
+section.bio {
+  margin: 2rem auto 10rem;
+  padding: 0 2rem;
+}
+
+  @media (min-width: 800px) { /* desktop */
+    section.bio {
+      width: 50vw;
+    }
+  }
+
+
+
 .thegrid {
   width: 100%;
   display: grid;
