@@ -150,11 +150,12 @@ body {
     font-weight: 600;
   }
 
-.icons {
+#socialicons {
   margin: 5rem auto 10rem;
+  white-space: no-wrap;
   }
 
-  .icons .socials {
+  #socialicons a.socials {
     display: inline-block;
     width: 32px; height: 32px;
     transition: transform 300ms ease-out;
@@ -163,7 +164,7 @@ body {
     .socials path {
       fill: var(--dark3);
     }
-    .socials:hover {
+      #socialicons a.socials:hover {
         cursor: pointer;
         transform: scale(2);
       }
