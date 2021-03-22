@@ -150,6 +150,20 @@ body {
     font-weight: 600;
   }
 
+footer {
+  font-size: 70%;
+  padding: 2rem;
+  color: var(--dark2);
+}
+  footer code {
+    color: var(--dark1);
+    opacity: 0.9;
+  }
+  footer code:hover {
+    color: var(--light1);
+    opacity: 1;
+  }
+
 #socialicons {
   margin: 5rem auto 10rem;
   white-space: no-wrap;
