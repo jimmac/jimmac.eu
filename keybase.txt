@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/jimmac
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jimmac.eu
+  * I am jimmac (https://keybase.io/jimmac) on keybase.
+  * I have a public key with fingerprint 8AF0 74B1 3299 463B 5D24  0A8E FDF3 7AD6 E4CB 7E7A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101f3a9bfd3088e536af6861d53c0ce9a84c142f732a1cfe1f8814f56f1478ef6d70a",
+      "fingerprint": "8af074b13299463b5d240a8efdf37ad6e4cb7e7a",
+      "host": "keybase.io",
+      "key_id": "fdf37ad6e4cb7e7a",
+      "kid": "0101f3a9bfd3088e536af6861d53c0ce9a84c142f732a1cfe1f8814f56f1478ef6d70a",
+      "uid": "38b467874fbf2e94e2ddf9c2c13cdb19",
+      "username": "jimmac"
+    },
+    "merkle_root": {
+      "ctime": 1616585444,
+      "hash_meta": "9158c1e3faecd491c996b1cb3fc0d9d3bd67ee34ea0e498d0ac5a6526f69dfd8",
+      "seqno": 19456337
+    },
+    "revoke": {
+      "sig_ids": [
+        "bc24794a5bb9c0728005a9a3ad3bc1ecd0f9831d624cacf6c5ec437f1eda25650f"
+      ]
+    },
+    "service": {
+      "hostname": "jimmac.eu",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1616585464,
+  "expire_in": 157680000,
+  "prev": "e3b23ac9f974d778ee3b2094c38216fdcd8b024824af939c57070a438b6d22ea",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMKwAnicrVNdaFxFGN2ttraBlFKji0JFLqViXeL83bkzS5SA1FKoEGnAhyas85vc
+bnbv5t67a2PNQ2uoRqSCBrQShVqIaDFN+1aRGkL9gaAp2gaKRbAqaBvpQ2wNixTn
+BgUVH30a5uN855zvfDPn2m/LteWPfjw4uWug+4v8/FzcyD2911s54MlIj3ilA17F
+rB5mSJskLVdC7ZU8AAG0WHBpNQaMGR9TYSmjUPtYAWW4YERBgmyAkYDKGmgZg8T6
+1EISMGOpDoDwip4NawMmrsdhLXW0TFgQEAkx4pxQLH2NCBAOri0OhKaGKBmYIGsc
+jJKsw5mTIjGdYeRq7lJetfcf+P/Zd2OVDjNJaMACYqVFhhODtLZcIQWx0hLyDJiY
+uCaqxqH3hdWqUN5o0auauDJkynEUpVm0Kg0zAKSQ+swnhLjxRDJYrppUuD4Ofaag
+wVYYpQmHinMqoZLYKqC5xlLTwBhMjACGcKaBUL6gPqKWcm01cy4SM1yLnAInPsU4
+cBZi04wqJlNPwgGXWuKV9npSIRJwInwpuQIBYgD4ggssnIhzoDSwnGGoKSJKKEuV
+bxTBgYVGC+RTH1ivfzRTi5uhWiXP1vSP8TtNw/mpx1EaqWjIlQfTtJ6UslTSkXqG
+e8bI8p8MZRnWtHshrqNp4iSMam4Gh/xXYNQFZvbXw9iUwwzhB9Q5ByDTMU1HabBE
+WChueUB04PaYFQAnCjMEqdVKMwkQYYgIyzFXfgDcmolbL9UIGfG3BB1pKgYcp4ut
+JtJGbLzRudm+23P5tty6tWuyr5Nr27Dprw91Hd9xa2vPyZUHwHu5uir80vih2Ft6
+den9pXnvsYeHe85NdTyUozvGJ8a3nVg4dvyTwt2/z6COI+tf7NjekoUbRy58M33P
+8VaxVJr9dOLKzMr2768t3lx/bU9hDM30bug+1bO1sOOJF2bfPJZsPLTv9UfwJbXl
+w5/mt719YeLHW88d7H+2OV7sfXnXldap7/o37j7ftTAWbe7s79u//OtCZc3N5c8X
+81tGdj4O1r0z8VTfxem58dadl5vhV0evXvpttH6m/fDhB1v3Pv9Ze3f5lamf1961
+9NqND0a+zr1xcPHdy6fPTo5Nd3WVdp69mLvv0Sc/2nP1/tbUppfyJ+R5urlQ/PLM
+5O7r6fDcW8vfnjwdH/oDgUWFtQ==
+=OcXQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jimmac
+
+==================================================================
