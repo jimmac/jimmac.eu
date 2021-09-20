@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 3rem;
   font-weight: 800;
   line-height: 1.25;
+  font-variation-settings: "wght" 800; /* needed for webkit */
 }
 a {
   color: var(--green1);
@@ -139,6 +140,7 @@ body {
   }
   .splash .title {
     font-weight: 600;
+    font-variation-settings: "wght" 600; /* needed for webkit */
   }
 
 #socialicons {
