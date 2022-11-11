@@ -99,6 +99,10 @@ a {
     text-decoration: none;
     color: inherit;
   }
+  
+  .hide {
+    display: none;
+  }
 
 body {
   /*temporary centering before I get the grid */
