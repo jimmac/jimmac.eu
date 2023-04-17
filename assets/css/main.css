@@ -46,6 +46,8 @@
   --dark4: rgb(36,31,49);
   --dark5: rgb(0,0,0);
   --text: #f6f5f4;
+  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 /* FONTS */
@@ -176,16 +178,17 @@ body {
         fill: var(--dark1);
       }
 
-section.bio {
+section.intro {
   margin: 2rem auto 10rem;
   padding: 0 2rem;
 }
-  section.bio h2 {
-    display: none;
+  section.intro h2 { display: none;  }
+  section.intro h3 {
+    
   }
 
   @media (min-width: 800px) { /* desktop */
-    section.bio {
+    section.intro {
       width: 50vw;
     }
   }
