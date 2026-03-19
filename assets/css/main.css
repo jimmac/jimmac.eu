@@ -61,6 +61,7 @@
   --bounce-ease:    cubic-bezier(0.34, 3, 0.64, 1);
   --smooth-ease:    cubic-bezier(0.34, 1, 0.64, 1);
   --radius:         8px;
+  --page-width:     1600px;
 
   /* Derived shades via relative colors */
   --accent-hover: oklch(from var(--accent) calc(l * 1.15) c h);
@@ -157,7 +158,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-width: 1600px;
+  max-width: var(--page-width);
   margin: 0 auto;
   color: var(--fg);
   background: var(--bg);
@@ -199,16 +200,35 @@ body {
   }
 }
 
-#socialicons {
+footer {
+  align-self: stretch;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  background: var(--dark4);
+
+  .thegrid {
+    max-width: var(--page-width);
+    margin: 0 auto;
+
+    img, video {
+      background-color: transparent;
+    }
+  }
+}
+
+#socialicons {
+  width: 60vw;
+  margin: 0 auto;
   padding: 5rem 0 10rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  background: var(--dark4);
+
+  @media (min-width: 800px) {
+    width: auto;
+  }
 
   a.socials {
     display: inline-block;
