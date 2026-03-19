@@ -1,5 +1,6 @@
 /* main */
 :root {
+  /* GNOME HIG Palette */
   --blue1: rgb(153,193,241);
   --blue2: rgb(98,160,234);
   --blue3: rgb(53,132,228);
@@ -45,9 +46,42 @@
   --dark3: rgb(61,56,70);
   --dark4: rgb(36,31,49);
   --dark5: rgb(0,0,0);
-  --text: #f6f5f4;
-  scroll-behavior: auto;
+
+  /* Semantic tokens — light mode defaults */
+  --bg:           var(--light1);
+  --bg-secondary: var(--light2);
+  --fg:           var(--dark4);
+  --fg-secondary: var(--dark2);
+  --accent:       var(--blue4);
+  --link:         var(--green5);
+  --border:       var(--light3);
+  --icon-fill:    var(--light5);
+  --icon-hover:   var(--dark4);
+  --icon-active:  var(--dark2);
+
+  /* Derived shades via relative colors */
+  --accent-hover: oklch(from var(--accent) calc(l * 1.15) c h);
+  --accent-faded: oklch(from var(--accent) l c h / 0.3);
+  --link-hover:   oklch(from var(--link) calc(l * 1.2) c h);
+  --grid-bg:      oklch(from var(--bg) calc(l * 0.96) 0.005 h);
+  --grid-bg-alt:  oklch(from var(--bg) calc(l * 0.90) 0.005 h);
+
   scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:           var(--dark4);
+    --bg-secondary: var(--dark3);
+    --fg:           var(--light2);
+    --fg-secondary: var(--light4);
+    --accent:       oklch(from var(--blue2) l calc(c * 0.6) h);
+    --link:         oklch(from var(--green1) l calc(c * 0.6) h);
+    --border:       var(--dark1);
+    --icon-fill:    var(--dark1);
+    --icon-hover:   var(--light3);
+    --icon-active:  var(--light5);
+  }
 }
 
 /* FONTS */
@@ -61,14 +95,15 @@
 }
 
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+html {
+  font-family: 'Inter', sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif;
+  }
 }
 
 html, body {
@@ -79,10 +114,8 @@ html, body {
   line-height: 1.6;
   letter-spacing: -0.01em;
   word-spacing: -0.01em;
-}
 
-@media (min-width: 700px) {
-  html, body {
+  @media (min-width: 700px) {
     font-size: 18px;
   }
 }
@@ -91,23 +124,27 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 3rem;
   font-weight: 800;
   line-height: 1.25;
-  font-variation-settings: "wght" 800; /* needed for webkit */
-}
-a {
-  color: var(--green1);
+  font-variation-settings: "wght" 800;
 }
 
-  a.splash {
+a {
+  color: var(--link);
+
+  &:hover {
+    color: var(--link-hover);
+  }
+
+  &.splash {
     text-decoration: none;
     color: inherit;
   }
-  
-  .hide {
-    display: none;
-  }
+}
+
+.hide {
+  display: none;
+}
 
 body {
-  /*temporary centering before I get the grid */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -115,8 +152,8 @@ body {
   flex-direction: column;
   max-width: 1600px;
   margin: 0 auto;
-  color: var(--text);
-  background: #222;
+  color: var(--fg);
+  background: var(--bg);
 }
 
 .splash, .footer {
@@ -125,127 +162,124 @@ body {
   text-align: center;
 }
 
-  .splash img {
+.splash {
+  img {
     display: inline-block;
     width: 256px;
     height: 256px;
     border-radius: 50%;
-    border-style:solid;
-    border-color: var(--light3);
+    border-style: solid;
+    border-color: var(--border);
     border-width: 16px;
     transition: transform 300ms ease-out,
                 border-width 300ms ease-out;
-  }
-    .splash img:hover {
+
+    &:hover {
       border-width: 2px;
       transform: scale(1.1);
     }
-  .splash h1 {
+  }
+
+  h1 {
     text-transform: uppercase;
     margin-top: 6px;
   }
-  .splash .title {
+
+  .title {
     font-weight: 600;
-    font-variation-settings: "wght" 600; /* needed for webkit */
+    font-variation-settings: "wght" 600;
   }
+}
 
 #socialicons {
   margin: 5rem auto 10rem;
   max-width: 50vw;
-  display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
-  }
 
-  #socialicons a.socials {
+  a.socials {
     display: inline-block;
-    width: 32px; height: 32px;
+    width: 32px;
+    height: 32px;
     transition: transform 300ms ease-out;
     margin: 1rem;
-  }
-    .socials path {
-      fill: var(--dark3);
+
+    path {
+      fill: var(--icon-fill);
+      transition: fill 150ms ease-out;
     }
-      #socialicons a.socials:hover {
-        cursor: pointer;
-        transform: scale(2);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(2);
+
+      path {
+        fill: var(--icon-hover);
       }
-      .socials:hover path {
-        fill: var(--light3);
-      }
-      .socials:active path {
-        fill: var(--dark1);
-      }
+    }
+
+    &:active path {
+      fill: var(--icon-active);
+    }
+  }
+}
 
 section.intro {
   margin: 2rem auto 10rem;
   padding: 0 2rem;
+
+  h2 {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    width: 50vw;
+  }
 }
-  section.intro h2 { display: none;  }
-  section.intro h3 {
-    
-  }
-
-  @media (min-width: 800px) { /* desktop */
-    section.intro {
-      width: 50vw;
-    }
-  }
-
-
 
 .thegrid {
   width: 100%;
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 0;
+  gap: 0;
   justify-content: stretch;
   align-items: center;
-  /* grid-column-end: span 2;
-  grid-row-end: span 2; */
-}
 
-  @media (min-width: 800px) { /* desktop */
-    .thegrid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .thegrid img,
-  .thegrid video {
+  img, video {
     display: block;
     width: 100%;
     height: auto;
-    background-color: #282828;
-  }
-  .thegrid img::before {
-    content: '';
-    background-color: red;
-  }
-  .thegrid img:nth-child(odd) {
-    background-color: #1e1e1e;
+    background-color: var(--grid-bg);
   }
 
-  .thegrid .grey {
-    /* background-color: var(--dark4); */
+  img:nth-child(odd) {
+    background-color: var(--grid-bg-alt);
   }
-  .thegrid .big {
+
+  .big {
     background-color: transparent;
   }
 
-  .thegrid .whitespaced  {
+  .whitespaced {
     padding: 20%;
   }
-    @media (min-width: 800px) { /* desktop */
-      .thegrid .four  {
-        grid-column: span 4;
-        background-color: transparent;
-      }
-      .thegrid .two  {
-        grid-column: span 2;
-        background-color: transparent;
-      }
 
+  @media (min-width: 800px) {
+    .four {
+      grid-column: span 4;
+      background-color: transparent;
     }
+
+    .two {
+      grid-column: span 2;
+      background-color: transparent;
+    }
+  }
+}
