@@ -69,8 +69,8 @@
   --link-hover:   oklch(from var(--link) calc(l * 1.2) c h);
   --grid-bg:      oklch(from var(--bg) calc(l * 0.96) 0.005 h);
   --grid-bg-alt:  oklch(from var(--bg) calc(l * 0.90) 0.005 h);
-  --hicolor-bg:     oklch(from var(--dark4) l 0 h);
-  --hicolor-bg-alt: oklch(from var(--dark4) calc(l * 0.8) 0 h);
+  --hicolor-bg:     var(--dark4);
+  --hicolor-bg-alt: oklch(from var(--dark4) calc(l * 0.8) c h);
 
   scroll-behavior: smooth;
 }
