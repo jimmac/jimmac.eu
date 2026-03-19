@@ -47,7 +47,7 @@
   --dark4: rgb(36,31,49);
   --dark5: rgb(0,0,0);
 
-  /* Semantic tokens — light mode defaults */
+  /* bits */
   --bg:           var(--light1);
   --bg-secondary: var(--light2);
   --fg:           var(--dark4);
@@ -58,6 +58,9 @@
   --icon-fill:    var(--light5);
   --icon-hover:   var(--dark4);
   --icon-active:  var(--dark2);
+  --bounce-ease:    cubic-bezier(0.34, 3, 0.64, 1);
+  --smooth-ease:    cubic-bezier(0.34, 1, 0.64, 1);
+  --radius:         8px;
 
   /* Derived shades via relative colors */
   --accent-hover: oklch(from var(--accent) calc(l * 1.15) c h);
@@ -65,13 +68,15 @@
   --link-hover:   oklch(from var(--link) calc(l * 1.2) c h);
   --grid-bg:      oklch(from var(--bg) calc(l * 0.96) 0.005 h);
   --grid-bg-alt:  oklch(from var(--bg) calc(l * 0.90) 0.005 h);
+  --hicolor-bg:     oklch(from var(--dark4) l 0 h);
+  --hicolor-bg-alt: oklch(from var(--dark4) calc(l * 0.8) 0 h);
 
   scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:           var(--dark4);
+    --bg:           oklch(from var(--dark4) l 0 h);
     --bg-secondary: var(--dark3);
     --fg:           var(--light2);
     --fg-secondary: var(--light4);
@@ -129,9 +134,11 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--link);
+  transition: color 200ms var(--smooth-ease);
 
   &:hover {
     color: var(--link-hover);
+    transition-timing-function: var(--bounce-ease);
   }
 
   &.splash {
@@ -171,12 +178,13 @@ body {
     border-style: solid;
     border-color: var(--border);
     border-width: 16px;
-    transition: transform 300ms ease-out,
-                border-width 300ms ease-out;
+    transition: transform 200ms var(--smooth-ease),
+                border-width 200ms var(--smooth-ease);
 
     &:hover {
       border-width: 2px;
       transform: scale(1.1);
+      transition-timing-function: var(--bounce-ease);
     }
   }
 
@@ -192,37 +200,41 @@ body {
 }
 
 #socialicons {
-  margin: 5rem auto 10rem;
-  max-width: 50vw;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 5rem 0 10rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  background: var(--dark4);
 
   a.socials {
     display: inline-block;
     width: 32px;
     height: 32px;
-    transition: transform 300ms ease-out;
+    transition: transform 200ms var(--smooth-ease);
     margin: 1rem;
 
     path {
-      fill: var(--icon-fill);
-      transition: fill 150ms ease-out;
+      fill: var(--dark1);
+      transition: fill 200ms var(--smooth-ease);
     }
 
     &:hover {
       cursor: pointer;
       transform: scale(2);
+      transition-timing-function: var(--bounce-ease);
 
       path {
-        fill: var(--icon-hover);
+        fill: var(--light3);
+        transition-timing-function: var(--bounce-ease);
       }
     }
 
     &:active path {
-      fill: var(--icon-active);
+      fill: var(--light5);
     }
   }
 }
@@ -261,6 +273,27 @@ section.intro {
 
   img:nth-child(odd) {
     background-color: var(--grid-bg-alt);
+  }
+
+  @media (min-width: 800px) {
+    img:nth-child(odd) {
+      background-color: var(--grid-bg);
+    }
+
+    img:nth-child(8n+1),
+    img:nth-child(8n+3),
+    img:nth-child(8n+6),
+    img:nth-child(8n+8) {
+      background-color: var(--grid-bg-alt);
+    }
+  }
+
+  img.hicolor {
+    background-color: var(--hicolor-bg);
+
+    &:nth-child(odd) {
+      background-color: var(--hicolor-bg-alt);
+    }
   }
 
   .big {
