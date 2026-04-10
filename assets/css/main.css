@@ -198,11 +198,14 @@ body {
     text-transform: uppercase;
     margin-top: 6px;
   }
+}
 
-  .title {
-    font-weight: 600;
-    font-variation-settings: "wght" 600;
-  }
+h2.title {
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  margin: 0 1rem;
+  text-align: center;
+  text-wrap: balance;
 }
 
 footer {
