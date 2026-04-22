@@ -72,8 +72,10 @@
   --hicolor-bg:     var(--dark4);
   --hicolor-bg-alt: oklch(from var(--dark4) calc(l * 0.8) c h);
 
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;   
 }
+
+@view-transition { navigation: auto; }
 
 @media (prefers-color-scheme: dark) {
   :root {
