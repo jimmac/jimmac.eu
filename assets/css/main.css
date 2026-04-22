@@ -198,9 +198,17 @@ main {
     }
   }
 
-  h1 {
-    text-transform: uppercase;
-    margin-top: 6px;
+  .back {
+    opacity: 0.3;
+    transition: opacity 200ms var(--smooth-ease),
+                translate 200ms var(--smooth-ease);
+    translate: 0;
+  }
+
+  &:hover .back {
+    opacity: 1;
+    translate: -4px;
+    transition-timing-function: var(--bounce-ease);
   }
 }
 
